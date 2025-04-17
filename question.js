@@ -9,7 +9,7 @@ function generateQestion(){
         Game.options.push(options);
         Game.answer.push(options[Math.floor(Math.random()*d.getTime())%4]);
     }
-    console.log(Game);
+    /*console.log(Game);*/
 }
 
 function selectOption(index) {
@@ -85,6 +85,7 @@ function nextQuestion(){
 
         document.getElementById('reponses').remove();
         document.getElementById('question').remove();
+        document.getElementById('Terminus').remove();
 
 
         document.getElementById('progres').innerHTML = 'Quiz Fini !'

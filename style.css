@@ -104,3 +104,52 @@ p{
     margin: 12px;
     text-align:center
 }
+
+#Terminus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+
+.station {
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #2b5876;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+}
+
+.fleche {
+    color: #E5006B;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Version responsive */
+@media (max-width: 500px) {
+    #Terminus {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .station {
+        max-width: 90%;
+        width: 80%;
+    }
+    .fleche {
+        transform: rotate(90deg);
+    }
+}

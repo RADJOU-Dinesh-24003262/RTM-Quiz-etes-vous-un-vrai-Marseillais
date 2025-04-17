@@ -70,6 +70,17 @@ async function startGame(mode1) {
     
         case 1 :
             descquiz.textContent = 'Trouvez la ligne qui relie ces terminus';
+
+            terminus = document.createElement('div');
+            terminus.id = 'Terminus';
+            terminus.innerHTML = `
+                <p id='station1' class="station"></p>
+                <p class="fleche">⇄</p>
+                <p id='station2' class="station"></p>
+            `;
+            head.appendChild(terminus);
+            quiz.insertBefore(terminus, question.nextSibling);
+
             terminusLine();
             break;
 
