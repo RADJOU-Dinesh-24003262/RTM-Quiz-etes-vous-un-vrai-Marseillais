@@ -3,7 +3,10 @@ Game.score = 0 ;
 Game.options = [];
 Game.answer = [];
 
-async function startGame(mode) {
+var mode;
+
+async function startGame(mode1) {
+    mode = mode1;
     console.log("Démarrage du jeu en mode :", mode);
     document.getElementById('landing').style.display = 'none';
 
@@ -20,7 +23,7 @@ async function startGame(mode) {
 
     var progres = document.createElement('p');
     progres.id = 'progres';
-    progres.textContent = '0/10';
+    progres.textContent = '1/10';
 
     head.appendChild(h1);
     head.appendChild(descquiz);
@@ -58,7 +61,7 @@ async function startGame(mode) {
     quiz.appendChild(options);
     quiz.appendChild(suivant);
 
-    generateQestion(mode);
+    generateQestion();
     switch (mode) {
         case 0:
             descquiz.textContent = 'Devinez les terminus de la ligne';

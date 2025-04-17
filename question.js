@@ -1,4 +1,4 @@
-function generateQestion(mode){
+function generateQestion(){
     for (let index = 0; index < 10; index++) {
         var options = [];
         for (let j = 0; j < 4; j++) {
@@ -24,6 +24,7 @@ function selectOption(index) {
 function VerifyAnswer(index){
     let i = 0;
     while (i < 4) {
+        document.getElementById(i).disabled = true;
         if(Game.answer[0].id === Game.options[0][i].id)
             var answIndex = i;
         ++i;
@@ -41,6 +42,67 @@ function VerifyAnswer(index){
     Game.options.shift();
 
 
+
     document.getElementById('next').textContent = Game.answer.length > 0 ? 'Suivant' : 'Terminer';
-    btn.onclick = () => selectOption(i);
+    document.getElementById('next').onclick = () => nextQuestion();
+}
+
+function nextQuestion(){
+
+    let i = 0;
+    while (i < 4) {
+        document.getElementById(i).disabled = false;
+        document.getElementById(i).classList.remove('correct');
+        document.getElementById(i).classList.remove('incorrect');
+        document.getElementById(i).classList.remove('selected');
+        ++i;
+    }
+    document.getElementById('next').disabled = true;
+    document.getElementById('progres').innerHTML = 10-Game.answer.length+1 + '/10';
+    if(Game.answer.length > 0){
+        switch (mode) {
+            case 0:
+                lineTerminus();
+                break;
+        
+            case 1 :
+                terminusLine();
+                break;
+
+            default :
+                carteMys();
+                break;
+        }
+    }else{            
+        const percent = Math.round((Game.score / 10) * 100);
+        let message = '';
+        
+        if (percent >= 90) message = 'Expert RTM !';
+        else if (percent >= 70) message = 'Très bon score !';
+        else if (percent >= 50) message = 'Pas mal !';
+        else message = 'À améliorer !';
+
+        document.getElementById('reponses').remove();
+        document.getElementById('question').remove();
+
+
+        document.getElementById('progres').innerHTML = 'Quiz Fini !'
+
+        const head = document.getElementsByClassName('head')[1];
+        
+        const score = document.createElement('p');
+        score.innerHTML = `
+            ${message}<br>
+            Score: ${Game.score}/10<br>
+            (${percent}%)
+        `;
+        score.style.margin = '30px';    
+
+        head.parentNode.insertBefore(score, head.nextElementSibling );
+
+
+        
+        document.getElementById('next').onclick = () => nextQuestion()
+    }
+
 }
