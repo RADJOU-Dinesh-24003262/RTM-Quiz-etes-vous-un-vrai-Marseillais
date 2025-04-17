@@ -153,3 +153,9 @@ p{
         transform: rotate(90deg);
     }
 }
+
+#map {
+    height: 40vh;
+    width: 80vw;
+    max-width: 90%;
+}

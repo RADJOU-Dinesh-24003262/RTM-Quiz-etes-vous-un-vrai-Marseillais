@@ -86,7 +86,19 @@ async function startGame(mode1) {
 
         default :
             descquiz.textContent = 'Devinez la ligne à partir de la carte';
-            carteMys();
+
+            map = document.createElement('div');
+            map.id = 'map';
+            map.innerHTML = ``;
+            head.appendChild(map);
+            quiz.insertBefore(map, question.nextSibling);
+
+            var myMap = L.map('map');
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(myMap);
+            
+            carteMys(myMap);
             break;
     }
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTM Quiz - Êtes vous un vrai Marseillais</title>
     <meta name="description" content="Quiz interactif sur les lignes de bus de Marseille. Devinez les terminus, reconnaissez les lignes sur la carte et testez vos connaissances.">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link media="print" onload="this.media='all';" rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,8 +23,9 @@
         </ul>
     </section>
 
-    <script src="modeManager.js"></script>
-    <script src="question.js"></script>
+    <script defer src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script defer src="modeManager.js"></script>
+    <script defer src="question.js"></script>
     <script src="loadData.js"></script>
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 </body>

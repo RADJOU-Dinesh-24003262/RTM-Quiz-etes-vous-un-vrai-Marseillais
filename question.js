@@ -49,7 +49,8 @@ function VerifyAnswer(index){
 }
 
 function nextQuestion(){
-
+    if (mode === 2)
+        layer.remove();
     let i = 0;
     while (i < 4) {
         document.getElementById(i).disabled = false;
@@ -85,9 +86,16 @@ function nextQuestion(){
 
         document.getElementById('reponses').remove();
         document.getElementById('question').remove();
-        document.getElementById('Terminus').remove();
-
-
+        switch (mode) {
+            case 1:
+                document.getElementById('Terminus').remove();
+                break;
+        
+            case 2:
+                document.getElementById('map').remove();
+                break;
+        }
+        
         document.getElementById('progres').innerHTML = 'Quiz Fini !'
 
         const head = document.getElementsByClassName('head')[1];
@@ -107,6 +115,10 @@ function nextQuestion(){
         btn.onclick = () => reinitGame();
         btn.innerHTML = 'Nouveau Quiz';
         btn.disabled = false;
+        
+        if (layer) {
+            layer.remove();
+        }
 
         Game.score = 0 ;
         Game.options = [];
