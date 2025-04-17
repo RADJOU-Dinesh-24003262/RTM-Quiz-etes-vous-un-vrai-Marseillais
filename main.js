@@ -80,3 +80,7 @@ async function startGame(mode1) {
     }
 }
 
+function reinitGame(){
+    document.getElementById('quiz').remove();
+    document.getElementById('landing').style.display = 'flex';
+}
