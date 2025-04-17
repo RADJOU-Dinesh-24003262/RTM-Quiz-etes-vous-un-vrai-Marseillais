@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTM Quiz - Êtes vous un vrai Marseillais</title>
+    <title>RTM Quiz - Êtes vous un vrai Marseillais ?</title>
     <meta name="description" content="Quiz interactif sur les lignes de bus de Marseille. Devinez les terminus, reconnaissez les lignes sur la carte et testez vos connaissances.">
     <link media="print" onload="this.media='all';" rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="RTM Quiz" />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://radjou-dinesh-24003262.github.io/RTM-Quiz-etes-vous-un-vrai-Marseillais/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RTM Quiz - Êtes vous un vrai Marseillais ?">
+    <meta property="og:description" content="Quiz interactif sur les lignes de bus de Marseille. Devinez les terminus, reconnaissez les lignes sur la carte et testez vos connaissances.">
+    <meta property="og:image" content="https://radjou-dinesh-24003262.github.io/RTM-Quiz-etes-vous-un-vrai-Marseillais/img/android-chrome-512x512.png">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="radjou-dinesh-24003262.github.io">
+    <meta property="twitter:url" content="https://radjou-dinesh-24003262.github.io/RTM-Quiz-etes-vous-un-vrai-Marseillais/">
+    <meta name="twitter:title" content="RTM Quiz - Êtes vous un vrai Marseillais ?">
+    <meta name="twitter:description" content="Quiz interactif sur les lignes de bus de Marseille. Devinez les terminus, reconnaissez les lignes sur la carte et testez vos connaissances.">
+    <meta name="twitter:image" content="https://radjou-dinesh-24003262.github.io/RTM-Quiz-etes-vous-un-vrai-Marseillais/img/android-chrome-512x512.png">
+
+
 </head>
 <body>
     <section id="landing">
@@ -24,8 +50,8 @@
     </section>
 
     <script defer src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script defer src="modeManager.js"></script>
-    <script defer src="question.js"></script>
-    <script src="loadData.js"></script>
-    <script defer src="main.js"></script>
+    <script defer src="js/modeManager.js"></script>
+    <script defer src="js/question.js"></script>
+    <script src="js/loadData.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
