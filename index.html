@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTM Quiz - Êtes vous un vrai Marseillais</title>
+    <meta name="description" content="Quiz interactif sur les lignes de bus de Marseille. Devinez les terminus, reconnaissez les lignes sur la carte et testez vos connaissances.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="landing">
+        
+        <div id="head">
+            <h1>Quiz sur la RTM</h1>
+            <p>Testez vos connaissances sur le réseau de transport marseillais</p>
+        </div>
+        
+        <ul>
+            <li><button class="bouton" id="ligne-terminus" onclick="startGame(0)">Ligne → Terminus</button></li>
+            <li><button class="bouton" id="terminus-ligne" onclick="startGame(1)">Terminus → Ligne</button></li>
+            <li><button class="bouton" id="nom-ligne" onclick="startGame(2)">Nom → Ligne</button></li>
+            <li><button class="bouton" id="carteMystere" onclick="startGame(3)">Carte Mystère</button></li>
+        </ul>
+    </section>
+    <script src="script.js"></script>    
+</body>
