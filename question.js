@@ -1,12 +1,13 @@
 function generateQestion(){
+    const d = new Date();
     for (let index = 0; index < 10; index++) {
         var options = [];
         for (let j = 0; j < 4; j++) {
-            var option = busData[Math.floor(Math.random()*130)];
+            var option = busData[Math.floor(Math.random()*d.getTime())%130];
             options.push(option);
         }
         Game.options.push(options);
-        Game.answer.push(options[Math.floor(Math.random()*4)]);
+        Game.answer.push(options[Math.floor(Math.random()*d.getTime())%4]);
     }
     console.log(Game);
 }
@@ -101,8 +102,14 @@ function nextQuestion(){
         head.parentNode.insertBefore(score, head.nextElementSibling );
 
 
-        
-        document.getElementById('next').onclick = () => nextQuestion()
+        let btn =  document.getElementById('next')
+        btn.onclick = () => reinitGame();
+        btn.innerHTML = 'Nouveau Quiz';
+        btn.disabled = false;
+
+        Game.score = 0 ;
+        Game.options = [];
+        Game.answer = [];
     }
 
 }
