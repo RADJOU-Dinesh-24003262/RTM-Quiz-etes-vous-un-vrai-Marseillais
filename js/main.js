@@ -29,7 +29,7 @@ async function startGame(mode1) {
     head.appendChild(descquiz);
     head.appendChild(progres);
     quiz.appendChild(head);
-    document.body.appendChild(quiz);
+    document.body.prepend(quiz);
 
     var question = document.createElement('p');
     question.id = 'question';

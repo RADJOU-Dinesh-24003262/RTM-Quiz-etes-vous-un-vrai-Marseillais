@@ -98,7 +98,7 @@ function nextQuestion(){
         
         document.getElementById('progres').innerHTML = 'Quiz Fini !'
 
-        const head = document.getElementsByClassName('head')[1];
+        const head = document.getElementsByClassName('head')[0];
         
         const score = document.createElement('p');
         score.innerHTML = `
